@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="registerClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="loginClick"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FAFAFA"
+        android:fitsSystemWindows="true">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/activity_login_tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@string/activity_login_title"
+            android:background="#80EEEEEE"
+            app:titleTextColor="@color/black" />
+
+        <EditText
+            android:id="@+id/activity_login_et_account"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_login_et_height"
+            android:layout_margin="@dimen/activity_login_et_margin"
+            android:background="@drawable/activity_login_et_bg"
+            android:lines="1"
+            android:singleLine="true"
+            android:hint="@string/activity_login_et_account_hint"
+            android:textColorHint="#90CAF9"
+            android:textColor="@color/grey"
+            android:paddingStart="10dp"
+            app:layout_constraintTop_toBottomOf="@id/activity_login_tool_bar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/activity_login_et_password"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintVertical_bias="0.1"
+            android:transitionName="account"/>
+
+        <EditText
+            android:id="@+id/activity_login_et_password"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/activity_login_et_height"
+            android:background="@drawable/activity_login_et_bg"
+            android:hint="@string/activity_login_et_password_hint"
+            android:lines="1"
+            android:singleLine="true"
+            android:textColorHint="#90CAF9"
+            android:textColor="@color/grey"
+            android:inputType="textPassword"
+            android:paddingStart="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/activity_login_et_account"
+            app:layout_constraintStart_toStartOf="@id/activity_login_et_account"
+            app:layout_constraintTop_toBottomOf="@id/activity_login_et_account"
+            android:transitionName="password"/>
+
+        <CheckBox
+            android:id="@+id/activity_login_btn_show_password"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:button="@drawable/ic_visibility_24dp"
+            app:layout_constraintEnd_toEndOf="@id/activity_login_et_password"
+            app:layout_constraintTop_toTopOf="@id/activity_login_et_password"
+            app:layout_constraintBottom_toBottomOf="@id/activity_login_et_password"
+            android:visibility="invisible"/>
+
+        <CheckBox
+            android:id="@+id/activity_login_remember_checkbox"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/activity_login_et_password"
+            app:layout_constraintStart_toStartOf="@id/activity_login_et_password"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_login_checkbox_remember_me"
+            android:textSize="16sp"
+            android:textColor="@color/grey"
+            app:layout_constraintTop_toTopOf="@id/activity_login_remember_checkbox"
+            app:layout_constraintBottom_toBottomOf="@id/activity_login_remember_checkbox"
+            app:layout_constraintStart_toEndOf="@id/activity_login_remember_checkbox"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_login_tv_no_account"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toTopOf="@id/activity_login_remember_checkbox"
+            app:layout_constraintBottom_toBottomOf="@id/activity_login_remember_checkbox"
+            app:layout_constraintEnd_toEndOf="@id/activity_login_et_password"
+            android:onClick="@{registerClick}"/>
+
+        <TextView
+            android:id="@+id/activity_login_btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_login_btn_height"
+            android:background="@drawable/activity_btn_bg"
+            android:layout_marginStart="@dimen/activity_login_et_margin"
+            android:layout_marginEnd="@dimen/activity_login_et_margin"
+            android:textColor="#FFFFFF"
+            android:text="@string/activity_main_btn_login"
+            android:gravity="center"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@id/activity_login_et_password"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.64"
+            android:onClick="@{loginClick}"
+            android:transitionName="btn"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

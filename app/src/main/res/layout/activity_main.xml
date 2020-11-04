@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="loginClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="registerClick"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/activity_main_bg">
+
+        <TextView
+            android:id="@+id/activity_main_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_main_title_height"
+            android:text="@string/activity_main_title"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:textSize="45sp"
+            android:textStyle="italic|bold"
+            android:layout_marginStart="@dimen/activity_main_title_width_margin"
+            android:layout_marginEnd="@dimen/activity_main_title_width_margin"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.1" />
+
+        <TextView
+            android:id="@+id/activity_main_subtitle"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/activity_main_title_height"
+            android:text="@string/activity_main_subtitle"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@id/activity_main_title"
+            app:layout_constraintEnd_toEndOf="@id/activity_main_title"
+            app:layout_constraintTop_toBottomOf="@id/activity_main_title"/>
+
+        <TextView
+            android:id="@+id/activity_main_btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_main_btn_height"
+            android:layout_marginBottom="15dp"
+            android:text="@string/activity_main_btn_login"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textColor="@color/grey"
+            android:background="@drawable/activity_main_btn_login_bg"
+            android:layout_marginStart="@dimen/activity_main_btn_width_margin"
+            android:layout_marginEnd="@dimen/activity_main_btn_width_margin"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/activity_main_btn_register"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintVertical_bias="0.8"
+            android:onClick="@{loginClick}" />
+
+        <TextView
+            android:id="@+id/activity_main_btn_register"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/activity_main_btn_height"
+            android:text="@string/activity_main_btn_register"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textColor="@color/grey"
+            android:background="@drawable/activity_main_btn_register_bg"
+            app:layout_constraintTop_toBottomOf="@id/activity_main_btn_login"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/activity_main_btn_login"
+            app:layout_constraintEnd_toEndOf="@id/activity_main_btn_login"
+            android:onClick="@{registerClick}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

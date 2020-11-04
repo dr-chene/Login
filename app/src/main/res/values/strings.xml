@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Login</string>
+    <string name="activity_main_btn_login">LOGIN</string>
+    <string name="activity_main_btn_register">REGISTER</string>
+    <string name="activity_main_title">LOGINDEMO</string>
+    <string name="activity_main_subtitle">the third homework of android</string>
+    <string name="activity_login_title">Login</string>
+    <string name="activity_login_et_password_hint">Your password</string>
+    <string name="activity_login_et_account_hint">Your account</string>
+    <string name="activity_login_tv_no_account">没有账号？点击注册</string>
+    <string name="activity_register_title">REGISTER</string>
+    <string name="activity_register_et_confirm_password_hint">Confirm password</string>
+    <string name="activity_login_checkbox_remember_me">remember me</string>
+</resources>
